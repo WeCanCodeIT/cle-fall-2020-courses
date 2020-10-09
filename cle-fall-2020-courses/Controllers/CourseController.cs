@@ -1,4 +1,5 @@
 ﻿using cle_fall_2020_courses.Models;
+using cle_fall_2020_courses.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace cle_fall_2020_courses.Controllers
     {
         public ViewResult Index()
         {
-            Course course = new Course(1, "Intro to MVC", "All you need to know about MVC");
+            CourseRepository courseRepo = new CourseRepository();
 
-            return View(course);
+            var model = courseRepo.GetAll();
+
+            return View(model);
         }
     }
 }
