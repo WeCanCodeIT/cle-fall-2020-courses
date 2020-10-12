@@ -10,13 +10,31 @@ namespace cle_fall_2020_courses.Controllers
 {
     public class CourseController : Controller
     {
+
+        IRepository<Course> courseRepo;
+
+        public CourseController(IRepository<Course> courseRepo)
+        {
+            this.courseRepo = courseRepo;
+        }
         public ViewResult Index()
         {
-            CourseRepository courseRepo = new CourseRepository();
+            // CourseRepository courseRepo = new CourseRepository();
 
             var model = courseRepo.GetAll();
 
             return View(model);
         }
+
+        public ViewResult Details(int id)
+        {
+            // CourseRepository courseRepo = new CourseRepository();
+
+            var model = courseRepo.GetById(id);
+
+            return View(model);
+        }
+
+
     }
 }

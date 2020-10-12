@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cle_fall_2020_courses.Repositories
 {
-    public class CourseRepository 
+    public class CourseRepository : IRepository<Course>
     {
         public List<Course> coursesList;
 
@@ -25,7 +25,7 @@ namespace cle_fall_2020_courses.Repositories
             return coursesList;
         }
 
-        public Course GetByID(int id)
+        public Course GetById(int id)
         {
             return coursesList.Single(c => c.Id == id);
         }

@@ -10,9 +10,5 @@ namespace cle_fall_2020_courses.Repositories
         IEnumerable<T> GetAll();
         T GetById(int id);
 
-
-
-
-
     }
 }
