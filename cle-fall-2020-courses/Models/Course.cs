@@ -11,6 +11,9 @@ namespace cle_fall_2020_courses.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
+        public int InstructorId { get; set; }
+        public virtual Instructor Instructor { get; set; }
+
         public Course()
         {
 
