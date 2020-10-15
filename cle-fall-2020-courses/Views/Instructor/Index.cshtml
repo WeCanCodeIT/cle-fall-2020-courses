@@ -15,11 +15,6 @@
     @foreach (var instructor in Model)
     {
         <p>Name: <a href="/Instructor/Details/@instructor.Id">@instructor.Name</a></p>
-
-        @foreach (var course in instructor.Courses)
-        {
-            <p>@course.Name</p>
-        }
         <hr />
     }
 
