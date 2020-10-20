@@ -19,8 +19,6 @@ namespace cle_fall_2020_courses.Controllers
         }
         public ViewResult Index()
         {
-            // CourseRepository courseRepo = new CourseRepository();
-
             var model = courseRepo.GetAll();
 
             return View(model);
@@ -28,13 +26,10 @@ namespace cle_fall_2020_courses.Controllers
 
         public ViewResult Details(int id)
         {
-            // CourseRepository courseRepo = new CourseRepository();
-
             var model = courseRepo.GetById(id);
 
             return View(model);
         }
-
 
     }
 }
