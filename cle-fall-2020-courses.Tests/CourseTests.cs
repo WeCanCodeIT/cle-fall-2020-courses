@@ -12,7 +12,7 @@ namespace cle_fall_2020_courses.Tests
 
         public CourseTests()
         {
-            sut = new Course(42, "Course name", "This is the course description");
+            sut = new Course(42, "Course name", "This is the course description", "10/18/2020");
         }
 
         [Fact]

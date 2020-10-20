@@ -14,6 +14,11 @@ namespace cle_fall_2020_courses.Repositories
             this.db = db;
         }
 
+        public void Create(Instructor obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Instructor> GetAll()
         {
             return db.Instructors;

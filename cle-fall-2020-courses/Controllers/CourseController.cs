@@ -31,5 +31,24 @@ namespace cle_fall_2020_courses.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Course course)
+        {
+            course.LastRevision = DateTime.Now.ToString("MM/dd/yyyy");
+
+            if (ModelState.IsValid)
+            {
+                courseRepo.Create(course);
+                return RedirectToAction("Index");
+            }
+            return View(course);
+        }
+
     }
 }

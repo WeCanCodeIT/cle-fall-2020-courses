@@ -30,7 +30,8 @@ namespace cle_fall_2020_courses
                     Id = 1,
                     Name = "A.I.",
                     Description = "A.I. For Humans",
-                    InstructorId = 1
+                    InstructorId = 1,
+                    LastRevision = "10/18/2020"
                 },
 
                 new Course
@@ -38,7 +39,9 @@ namespace cle_fall_2020_courses
                     Id = 2,
                     Name = "C# For Anyone",
                     Description = "Bootcamp Not Needed",
-                    InstructorId = 2
+                    InstructorId = 2,
+                    LastRevision = "10/18/2020"
+
                 },
 
                 new Course
@@ -46,7 +49,9 @@ namespace cle_fall_2020_courses
                     Id = 3,
                     Name = "Front End Work",
                     Description = "Where It's At",
-                    InstructorId = 2
+                    InstructorId = 2,
+                    LastRevision = "10/18/2020"
+
                 });
 
             modelBuilder.Entity<Instructor>().HasData(
