@@ -30,5 +30,17 @@ namespace cle_fall_2020_courses.Repositories
             db.SaveChanges();
         }
 
+        public void Update(Course course)
+        {
+            db.Courses.Update(course);
+            db.SaveChanges();
+        }
+
+        public void Delete(Course course)
+        {
+            db.Courses.Remove(course);
+            db.SaveChanges();
+        }
+
     }
 }

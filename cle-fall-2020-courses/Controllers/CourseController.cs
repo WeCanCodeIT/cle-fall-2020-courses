@@ -59,5 +59,39 @@ namespace cle_fall_2020_courses.Controllers
             return View(course);
         }
 
+        [HttpGet]
+        public ViewResult Update(int id)
+        {
+            Course model = courseRepo.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                courseRepo.Update(course);
+                return RedirectToAction("Details", "Course", new { id = course.Id });
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ViewResult Delete(int id)
+        {
+            Course model = courseRepo.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Course course)
+        {
+            courseRepo.Delete(course);
+
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

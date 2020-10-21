@@ -19,6 +19,11 @@ namespace cle_fall_2020_courses.Repositories
             throw new NotImplementedException();
         }
 
+        public void Delete(Instructor obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Instructor> GetAll()
         {
             return db.Instructors;
@@ -29,6 +34,9 @@ namespace cle_fall_2020_courses.Repositories
             return db.Instructors.Single(c => c.Id == id);
         }
 
-
+        public void Update(Instructor obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
