@@ -37,6 +37,13 @@ namespace cle_fall_2020_courses.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ViewResult CreateByInstructorId(int id)
+        {
+            ViewBag.InstructorId = id;
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Create(Course course)
         {
@@ -45,7 +52,9 @@ namespace cle_fall_2020_courses.Controllers
             if (ModelState.IsValid)
             {
                 courseRepo.Create(course);
-                return RedirectToAction("Index");
+                // return RedirectToAction("Index");
+                // return RedirectToAction("Details", new { id = course.Id });
+                return RedirectToAction("Details", "Instructor", new { id = course.InstructorId });
             }
             return View(course);
         }
