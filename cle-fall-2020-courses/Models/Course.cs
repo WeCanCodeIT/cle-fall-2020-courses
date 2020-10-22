@@ -15,9 +15,13 @@ namespace cle_fall_2020_courses.Models
         public string Description { get; set; }
         public string LastRevision { get; set; }
 
+        // Navigation properties to establish one-to-many relationship with Instructor
         [Display(Name = "Instructor")]
         public int InstructorId { get; set; }
         public virtual Instructor Instructor { get; set; }
+
+        // Navigation properties to establish many-to-many relationship with Students
+        public virtual List<StudentCourse> StudentCourses { get; set; }
 
         public Course()
         {

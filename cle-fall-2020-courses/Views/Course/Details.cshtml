@@ -18,6 +18,14 @@
     <p>Created on: <span>@Model.LastRevision</span></p>
     <hr />
 
+    <p>Students:</p>
+    <ol>
+        @foreach(var student in Model.StudentCourses)
+        {
+            <li>@student.Student.Name</li>
+        }
+    </ol>
+
     <a href="/Course/Update/@Model.Id">Update Course</a>
 
     <a href="/Course/Delete/@Model.Id">Delete Course</a>
